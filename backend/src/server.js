@@ -32,7 +32,9 @@ app.get("/health", (req, res) => {
 });
 
 import chatRoutes from "./routes/chat.routes.js";
+import analyticsRoutes from "./routes/analytics.routes.js";
 
+app.use("/api/analytics", analyticsRoutes);
 app.use("/api/chat", chatRoutes);
 
 const PORT = process.env.PORT || 5000;
